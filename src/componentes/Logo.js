@@ -5,7 +5,7 @@ import './Logo.css';
 const Logo = (props) => {
     let elements = [];
     for(let i=1;i<=props.repeat;i++){
-        elements.push(<img src={logo} className="App-logo" alt="logo" />);
+        elements.push(<img key={i} src={logo} className="App-logo" alt="logo" />);
     }
     return (
         <div> 
@@ -13,5 +13,9 @@ const Logo = (props) => {
         </div>
     );
   }
+
+Logo.defaultProps = {
+  repeat: 1
+}
 
 export default Logo;
